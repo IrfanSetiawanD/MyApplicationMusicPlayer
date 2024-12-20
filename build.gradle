@@ -1,0 +1,25 @@
+pluginManagement {
+    repositories {
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)  // Ensures repositories are not defined in individual build.gradle
+    repositories {
+        google()  // Ensure google repository is defined here
+        mavenCentral()
+        maven { url = uri("https://jitpack.io") }  // Add JitPack if using third-party dependencies from there
+    }
+}
+
+rootProject.name = "My Application Music Player"
+include ':app'
